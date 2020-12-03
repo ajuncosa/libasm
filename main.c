@@ -7,21 +7,19 @@ int		ft_strcmp(const char *s1, const char *s2);
 
 int main()
 {
-	char *src = "ktal";
-	char dst1[5];
-	char dst2[5];
-
 	/* STRLEN */
 
 //	printf("strlen ret: %4zu\n", strlen("holaaaa\n"));
 //	printf("ft_strlen ret: %zu\n", ft_strlen("holaaaa\n"));
 
 	/* STRCPY */
-
+/*	char *src = "ktal";
+	char dst1[5];
+	char dst2[5];
 //	char *ret = ft_strcpy(str2, src);
 //	printf("str2 dir: %p\n", str2);
 // 	printf("strcpy ret: %p\n", ret);
-/*	
+	
 	printf("strcpy: %s\n", strcpy(dst1, "ho"));
 	printf("ft_strcpy: %s\n", ft_strcpy(dst2, "ho"));
 	printf("strcpy: %s\n", strcpy(dst1, src));
@@ -30,8 +28,12 @@ int main()
 	printf("ft_strcpy: %s\n", ft_strcpy(dst2, "hola"));*/
 //	printf("strcpy: %s\n", strcpy(dst1, "holaa"));
 //	printf("ft_strcpy: %s\n", ft_strcpy(dst2, "holaa"));
-
-
+/*	char dst[8] = "asdfghj";
+	char dst2[8] = "asdfghj";
+	printf("strcpy: %s\n", strcpy(dst2, "hola"));
+	printf("ft_strcpy: %s\n", ft_strcpy(dst, "hola"));*/
+//	printf("strcpy: %s\n", strcpy("asl;fjl;asdjfjkasdl;fjadjsf", "asl;fjl;asdjfjkasdl;fjadjsf"));
+//	printf("ft_strcpy: %s\n", ft_strcpy("asl;fjl;asdjfjkasdl;fjadjsf", "asl;fjl;asdjfjkasdl;fjadjsf"));
 
 	/* STRCMP */
 /*	char *uno = "hola";
@@ -57,6 +59,8 @@ int main()
 	printf("ft_strcmp: %d\n", ft_strcmp("\xff\xff", "\xff"));
 	printf("strcmp: %d\n", strcmp("\xff", ""));
 	printf("ft_strcmp: %d\n", ft_strcmp("\xff", ""));*/
+
+	/* FT_WRITE */
 
 
 	return (0);

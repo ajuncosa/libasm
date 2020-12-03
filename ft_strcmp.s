@@ -8,8 +8,8 @@ _ft_strcmp:	cmp		byte[rsi], 0
 			and		dl, dh
 			jnz		equal
 			movzx	cx, byte[rsi]
-			movzx	bx, byte[rdi]
-			cmp		bx, cx
+			movzx	bx, byte[rdi]	; zero-extended to 16-bit, otherwise cmp will sign-extend the byte and unsigned char with value 255 will become negative
+			cmp		bx, cx			; cmp must compare WORD size values
 			jl		less
 			jg		more
 			add		rsi, 1
