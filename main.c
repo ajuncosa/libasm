@@ -1,9 +1,13 @@
 #include <stdio.h>
 #include <string.h>
+#include <unistd.h>
+#include <fcntl.h>
 
 size_t	ft_strlen(char *);
 char	*ft_strcpy(char *dst, const char *src);
 int		ft_strcmp(const char *s1, const char *s2);
+ssize_t	ft_write(int, const void *, size_t);
+ssize_t	ft_read(int, void *, size_t);
 
 int main()
 {
@@ -61,7 +65,18 @@ int main()
 	printf("ft_strcmp: %d\n", ft_strcmp("\xff", ""));*/
 
 	/* FT_WRITE */
+	/*printf("write: %zd\n", write(1, "hola\n", 5));
+	printf("ft_write: %zd\n", ft_write(1, "hola\n", 5));*/
 
+	/* FT_READ */
+	char buf[10];
+	char buf2[10];
+
+	int fd = open("readthis", O_RDONLY);
+	printf("read: %zd\n", read(fd, buf, 9));
+	printf("%s\n", buf);
+	printf("ft_read: %zd\n", ft_read(fd, buf2, 9));
+	printf("%s\n", buf2);
 
 	return (0);
 }
