@@ -72,9 +72,11 @@ int main()
 	char buf[10];
 	char buf2[10];
 
-	int fd = open("readthis", O_RDONLY);
+	int fd = open("readths", O_RDONLY);
 	printf("read: %zd\n", read(fd, buf, 9));
 	printf("%s\n", buf);
+	close(fd);
+	fd = open("readths", O_RDONLY);
 	printf("ft_read: %zd\n", ft_read(fd, buf2, 9));
 	printf("%s\n", buf2);
 
