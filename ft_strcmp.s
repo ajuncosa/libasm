@@ -1,7 +1,7 @@
 			global	_ft_strcmp
-
 			section	.text
-_ft_strcmp:	cmp		byte[rsi], 0
+_ft_strcmp:
+			cmp		byte[rsi], 0
 			sete	dl
 			cmp		byte[rdi], 0
 			sete	dh
@@ -15,9 +15,12 @@ _ft_strcmp:	cmp		byte[rsi], 0
 			add		rsi, 1
 			add		rdi, 1
 			jmp		_ft_strcmp
-less:		mov		rax, -1
+less:
+			mov		rax, -1
 			ret
-more:		mov		rax, 1
+more:
+			mov		rax, 1
 			ret
-equal:		mov		rax, 0
+equal:
+			mov		rax, 0
 			ret

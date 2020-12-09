@@ -2,6 +2,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <sys/errno.h>
 
 size_t	ft_strlen(char *);
 char	*ft_strcpy(char *dst, const char *src);
@@ -66,19 +67,50 @@ int main()
 
 	/* FT_WRITE */
 	/*printf("write: %zd\n", write(1, "hola\n", 5));
-	printf("ft_write: %zd\n", ft_write(1, "hola\n", 5));*/
+	printf("ft_write: %zd\n", ft_write(1, "hola\n", 5));
+	printf("write: %zd\n", write(1, "hola\n", 3));
+	printf("ft_write: %zd\n", ft_write(1, "hola\n", 3));
+	int a = write(FOPEN_MAX + 1, "abcdefghijklmnopqrstuvwxyz\n", 27);
+	perror("write errno");
+	errno = 100;
+    int b = ft_write(FOPEN_MAX + 1, "abcdefghijklmnopqrstuvwxyz\n", 27);
+	perror("ft_write errno");
+    printf("return write = %d\nreturn ft_write = %d\n\n", a, b);*/
 
 	/* FT_READ */
-	char buf[10];
+	/*char buf[10];
 	char buf2[10];
+	char buf3[10];
+	char buf4[10];
 
-	int fd = open("readths", O_RDONLY);
-	printf("read: %zd\n", read(fd, buf, 9));
+	int fd = open("readthis", O_RDONLY);
+	printf("read: %4zd\n", read(fd, buf, 9));
 	printf("%s\n", buf);
 	close(fd);
-	fd = open("readths", O_RDONLY);
+	fd = open("readthis", O_RDONLY);
 	printf("ft_read: %zd\n", ft_read(fd, buf2, 9));
-	printf("%s\n", buf2);
+	printf("%s\n\n", buf2);
+	close(fd);
+
+	errno = 100;
+	int a = read(FOPEN_MAX, buf, 9);
+	perror("read errno");
+	errno = 100;
+	int b = ft_read(FOPEN_MAX, buf, 9);
+	perror("ft_read errno");
+	printf("return read = %d\nreturn ft_read = %d\n\n", a, b);
+
+	errno = 100;
+	fd = open("readths", O_RDONLY);
+	a = read(fd, buf3, 9);
+	perror("read errno");
+	close(fd);
+	errno = 100;
+	fd = open("readths", O_RDONLY);
+	b = ft_read(fd, buf4, 9);
+	perror("ft_read errno");
+	printf("return read = %d\nreturn ft_read = %d\n", a, b);
+	printf("read: %s\nft_read: %s\n\n", buf3, buf4);*/
 
 	return (0);
 }
