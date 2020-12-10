@@ -1,4 +1,4 @@
-EXTERN ___error
+			EXTERN ___error
 			global	_ft_write
 			section .text           ; rdi = file descriptor, rsi = string, rdx = bytes to write
 _ft_write:

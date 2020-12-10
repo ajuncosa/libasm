@@ -1,4 +1,4 @@
-EXTERN ___error
+			EXTERN ___error
 			global	_ft_read
 			section .text			; rdi = file descriptor, rsi = buffer string, rdx = bytes to read
 _ft_read:

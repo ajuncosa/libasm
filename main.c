@@ -3,12 +3,14 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <sys/errno.h>
+#include <stdlib.h>
 
 size_t	ft_strlen(char *);
 char	*ft_strcpy(char *dst, const char *src);
 int		ft_strcmp(const char *s1, const char *s2);
 ssize_t	ft_write(int, const void *, size_t);
 ssize_t	ft_read(int, void *, size_t);
+char	*ft_strdup(const char *);
 
 int main()
 {
@@ -16,6 +18,7 @@ int main()
 
 //	printf("strlen ret: %4zu\n", strlen("holaaaa\n"));
 //	printf("ft_strlen ret: %zu\n", ft_strlen("holaaaa\n"));
+
 
 	/* STRCPY */
 /*	char *src = "ktal";
@@ -39,6 +42,7 @@ int main()
 	printf("ft_strcpy: %s\n", ft_strcpy(dst, "hola"));*/
 //	printf("strcpy: %s\n", strcpy("asl;fjl;asdjfjkasdl;fjadjsf", "asl;fjl;asdjfjkasdl;fjadjsf"));
 //	printf("ft_strcpy: %s\n", ft_strcpy("asl;fjl;asdjfjkasdl;fjadjsf", "asl;fjl;asdjfjkasdl;fjadjsf"));
+
 
 	/* STRCMP */
 /*	char *uno = "hola";
@@ -65,6 +69,7 @@ int main()
 	printf("strcmp: %d\n", strcmp("\xff", ""));
 	printf("ft_strcmp: %d\n", ft_strcmp("\xff", ""));*/
 
+
 	/* FT_WRITE */
 	/*printf("write: %zd\n", write(1, "hola\n", 5));
 	printf("ft_write: %zd\n", ft_write(1, "hola\n", 5));
@@ -76,6 +81,7 @@ int main()
     int b = ft_write(FOPEN_MAX + 1, "abcdefghijklmnopqrstuvwxyz\n", 27);
 	perror("ft_write errno");
     printf("return write = %d\nreturn ft_write = %d\n\n", a, b);*/
+
 
 	/* FT_READ */
 	/*char buf[10];
@@ -111,6 +117,19 @@ int main()
 	perror("ft_read errno");
 	printf("return read = %d\nreturn ft_read = %d\n", a, b);
 	printf("read: %s\nft_read: %s\n\n", buf3, buf4);*/
+
+
+	/* FT_STRDUP */
+	char src[] = "hola";
+	char *dst;
+
+	/*dst = strdup(src);
+	printf("%s\n", dst);
+	free(dst);
+	dst = ft_strdup(src);
+	printf("%s\n", dst);
+	free(dst);*/
+	//printf("%d\n", ft_strdup(src));
 
 	return (0);
 }
