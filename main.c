@@ -16,12 +16,14 @@ int main()
 {
 	/* STRLEN */
 
-//	printf("strlen ret: %4zu\n", strlen("holaaaa\n"));
-//	printf("ft_strlen ret: %zu\n", ft_strlen("holaaaa\n"));
+	printf("strlen ret: %4zu\n", strlen("holaaaa\n"));
+	printf("ft_strlen ret: %zu\n", ft_strlen("holaaaa\n"));
+	printf("strlen ret: %4zu\n", strlen(""));
+	printf("ft_strlen ret: %zu\n\n", ft_strlen(""));
 
 
 	/* STRCPY */
-/*	char *src = "ktal";
+	char *src = "ktal";
 	char dst1[5];
 	char dst2[5];
 //	char *ret = ft_strcpy(str2, src);
@@ -33,19 +35,19 @@ int main()
 	printf("strcpy: %s\n", strcpy(dst1, src));
 	printf("ft_strcpy: %s\n", ft_strcpy(dst2, src));
 	printf("strcpy: %s\n", strcpy(dst1, "hola"));
-	printf("ft_strcpy: %s\n", ft_strcpy(dst2, "hola"));*/
+	printf("ft_strcpy: %s\n", ft_strcpy(dst2, "hola"));
 //	printf("strcpy: %s\n", strcpy(dst1, "holaa"));
 //	printf("ft_strcpy: %s\n", ft_strcpy(dst2, "holaa"));
-/*	char dst[8] = "asdfghj";
-	char dst2[8] = "asdfghj";
-	printf("strcpy: %s\n", strcpy(dst2, "hola"));
-	printf("ft_strcpy: %s\n", ft_strcpy(dst, "hola"));*/
+	char test[8] = "asdfghj";
+	char test2[8] = "asdfghj";
+	printf("strcpy: %s\n", strcpy(test2, "hola"));
+	printf("ft_strcpy: %s\n\n", ft_strcpy(test, "hola"));
 //	printf("strcpy: %s\n", strcpy("asl;fjl;asdjfjkasdl;fjadjsf", "asl;fjl;asdjfjkasdl;fjadjsf"));
 //	printf("ft_strcpy: %s\n", ft_strcpy("asl;fjl;asdjfjkasdl;fjadjsf", "asl;fjl;asdjfjkasdl;fjadjsf"));
 
 
 	/* STRCMP */
-/*	char *uno = "hola";
+	char *uno = "hola";
 	char *dos = "holaa";
 
 	printf("strcmp: %d\n", strcmp("hola", "holaa"));
@@ -67,24 +69,24 @@ int main()
 	printf("strcmp: %d\n", strcmp("\xff\xff", "\xff"));
 	printf("ft_strcmp: %d\n", ft_strcmp("\xff\xff", "\xff"));
 	printf("strcmp: %d\n", strcmp("\xff", ""));
-	printf("ft_strcmp: %d\n", ft_strcmp("\xff", ""));*/
+	printf("ft_strcmp: %d\n\n", ft_strcmp("\xff", ""));
 
 
 	/* FT_WRITE */
-	/*printf("write: %zd\n", write(1, "hola\n", 5));
+	printf("write: %zd\n", write(1, "hola\n", 5));
 	printf("ft_write: %zd\n", ft_write(1, "hola\n", 5));
-	printf("write: %zd\n", write(1, "hola\n", 3));
-	printf("ft_write: %zd\n", ft_write(1, "hola\n", 3));
+	printf("\nwrite: %zd\n", write(1, "hola\n", 3));
+	printf("\nft_write: %zd\n", ft_write(1, "hola\n", 3));
 	int a = write(FOPEN_MAX + 1, "abcdefghijklmnopqrstuvwxyz\n", 27);
 	perror("write errno");
 	errno = 100;
     int b = ft_write(FOPEN_MAX + 1, "abcdefghijklmnopqrstuvwxyz\n", 27);
 	perror("ft_write errno");
-    printf("return write = %d\nreturn ft_write = %d\n\n", a, b);*/
+    printf("return write = %d\nreturn ft_write = %d\n\n", a, b);
 
 
 	/* FT_READ */
-	/*char buf[10];
+	char buf[10];
 	char buf2[10];
 	char buf3[10];
 	char buf4[10];
@@ -95,16 +97,16 @@ int main()
 	close(fd);
 	fd = open("readthis", O_RDONLY);
 	printf("ft_read: %zd\n", ft_read(fd, buf2, 9));
-	printf("%s\n\n", buf2);
+	printf("%s\n", buf2);
 	close(fd);
 
 	errno = 100;
-	int a = read(FOPEN_MAX, buf, 9);
+	a = read(FOPEN_MAX, buf, 9);
 	perror("read errno");
 	errno = 100;
-	int b = ft_read(FOPEN_MAX, buf, 9);
+	b = ft_read(FOPEN_MAX, buf, 9);
 	perror("ft_read errno");
-	printf("return read = %d\nreturn ft_read = %d\n\n", a, b);
+	printf("return read = %d\nreturn ft_read = %d\n", a, b);
 
 	errno = 100;
 	fd = open("readths", O_RDONLY);
@@ -116,20 +118,31 @@ int main()
 	b = ft_read(fd, buf4, 9);
 	perror("ft_read errno");
 	printf("return read = %d\nreturn ft_read = %d\n", a, b);
-	printf("read: %s\nft_read: %s\n\n", buf3, buf4);*/
+	printf("read: %s\nft_read: %s\n\n", buf3, buf4);
 
 
 	/* FT_STRDUP */
-	char src[] = "hola";
+	char src1[] = "hola";
 	char *dst;
 
-	/*dst = strdup(src);
-	printf("%s\n", dst);
+	dst = strdup(src1);
+	printf("strdup: %s\n", dst);
 	free(dst);
-	dst = ft_strdup(src);
-	printf("%s\n", dst);
-	free(dst);*/
-	//printf("%d\n", ft_strdup(src));
+	dst = ft_strdup(src1);
+	printf("ft_strdup: %s\n", dst);
+	free(dst);
+	dst = strdup("a");
+	printf("strdup: %s\n", dst);
+	free(dst);
+	dst = ft_strdup("a");
+	printf("ft_strdup: %s\n", dst);
+	free(dst);
+	dst = strdup("");
+	printf("strdup: %s\n", dst);
+	free(dst);
+	dst = ft_strdup("");
+	printf("ft_strdup: %s\n", dst);
+	free(dst);
 
 	return (0);
 }
