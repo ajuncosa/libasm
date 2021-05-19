@@ -15,7 +15,7 @@ char	*ft_strdup(const char *);
 int main()
 {
 	/* STRLEN */
-
+	printf(" __________________\n|                  |\n|      STRLEN      |\n|__________________|\n");
 	printf("strlen ret: %4zu\n", strlen("holaaaa\n"));
 	printf("ft_strlen ret: %zu\n", ft_strlen("holaaaa\n"));
 	printf("strlen ret: %4zu\n", strlen(""));
@@ -23,6 +23,7 @@ int main()
 
 
 	/* STRCPY */
+	printf(" __________________\n|                  |\n|      STRCPY      |\n|__________________|\n");
 	char *src = "ktal";
 	char dst1[5];
 	char dst2[5];
@@ -47,6 +48,7 @@ int main()
 
 
 	/* STRCMP */
+	printf(" __________________\n|                  |\n|      STRCMP      |\n|__________________|\n");
 	char *uno = "hola";
 	char *dos = "holaa";
 
@@ -73,6 +75,7 @@ int main()
 
 
 	/* FT_WRITE */
+	printf(" __________________\n|                  |\n|      WRITE       |\n|__________________|\n");
 	printf("write: %zd\n", write(1, "hola\n", 5));
 	printf("ft_write: %zd\n", ft_write(1, "hola\n", 5));
 	printf("\nwrite: %zd\n", write(1, "hola\n", 3));
@@ -86,6 +89,7 @@ int main()
 
 
 	/* FT_READ */
+	printf(" __________________\n|                  |\n|      READ        |\n|__________________|\n");
 	char buf[10];
 	char buf2[10];
 	char buf3[10];
@@ -122,6 +126,7 @@ int main()
 
 
 	/* FT_STRDUP */
+	printf(" __________________\n|                  |\n|      STRDUP      |\n|__________________|\n");
 	char src1[] = "hola";
 	char *dst;
 

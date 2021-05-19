@@ -7,10 +7,10 @@ _ft_write:
 			jc		error
 			ret
 error:
-			push	r11
+			sub		rsp, 8
 			mov		r10, rax		; save errno
 			call	___error		; this function returns the address to errno
 			mov		[rax], r10		; now rax contains a pointer to errno, so I put errno into the place pointed to by rax
 			mov		rax, -1
-			pop		r11
+			add		rsp, 8
 			ret
